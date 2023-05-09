@@ -13,19 +13,12 @@
 <head>
 <script type="text/javascript">
     function load()
-    {
-        var now = new Date();
-        setTimeout(function () {
-            var later = new Date();
-            console.log(later)
-            if (later.valueOf() - now.valueOf() > 3000) return;
-            window.location = "/not_installed";
-        }, 25);
-        console.log(now)
-        window.location = "bundesident://externalpage.com";
+    { 
+        setTimeout(function () { window.location = "/not_installed"; }, 1000);
+        window.location.href = "https://eid.digitalservicebund.de/eID-Client?tcTokenUrl=123";
     }
-    
 </script>
+
 </head>
 
 <body onload="load()">

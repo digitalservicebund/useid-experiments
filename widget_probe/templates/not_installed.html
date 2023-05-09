@@ -12,23 +12,11 @@
     <html>
 <head>
 <script type="text/javascript">
-    function load()
-    {
-        var now = new Date();
-        setTimeout(function () {
-            var later = new Date();
-            console.log(later)
-            if (later.valueOf() - now.valueOf() > 3000) return;
-            window.location = "/not_installed";
-        }, 25);
-        console.log(now)
-        window.location = "bundesident://externalpage.com";
-    }
-    
 </script>
 </head>
 
 <body onload="load()">
-   <h1>Hello Hannes!</h1>
+   <h1>Nicht installiert</h1>
+   <a href="/">Restart</a>
 </body>
 </html> 
