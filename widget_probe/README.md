@@ -19,3 +19,10 @@ Link is set through embedded ifram | Works | Does not work
 
 
 This does look quite smooth in Android. However, the user would see a pop-up screen for a short second before being redirect if any app is not installed.
+
+## Run prototype
+To run the prototype perform the following commands:
+```bash
+pipenv install
+pipenv run python main.py
+```
