@@ -1,7 +1,6 @@
 from flask import Flask
 from flask import render_template
 
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -33,3 +32,6 @@ def check_bundesident_redirect():
 def check_ausweisapp_redirect():
     return render_template("check_ausweisapp_redirect.html")
 
+if __name__ == "__main__":
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=80)
