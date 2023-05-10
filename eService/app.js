@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   </html>`);
 });
 
-app.get("/redirect", (req, res) => {
+app.get("/not_installed", (req, res) => {
   res.set("Content-Type", "text/html");
   res.send(`
   <!DOCTYPE html>
@@ -47,7 +47,30 @@ app.get("/redirect", (req, res) => {
     <head>
     </head>
     <body>
-      <iframe src="${widgetSource}" height="800" width="400" title="iframe Example" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts"></iframe>
+      <iframe src="${widgetSource}/not_installed" height="800" width="400" title="iframe Example" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts"></iframe>
+    </body>
+  </html>`);
+});
+
+app.get("/success", (req, res) => {
+  res.set("Content-Type", "text/html");
+  res.send(`
+  <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Page Title</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+        <script src='main.js'></script>
+    </head>
+    <body>
+        <html>
+    <head>
+    </head>
+    <body>
+      <iframe src="${widgetSource}/success" height="800" width="400" title="iframe Example" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts"></iframe>
     </body>
   </html>`);
 });
