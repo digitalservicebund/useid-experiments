@@ -20,16 +20,16 @@
               console.log(document.hidden);
               console.log(document.visibilityState);
               if (document.hidden || later.valueOf() - now.valueOf() > 1000) {
-                window.location = "https://774b-213-182-133-198.ngrok-free.app/redirect"; //Success page
+                window.location = "{{embedded_page}}/success"; //Success page
                 return;
               }
               window.location =
-                "https://774b-213-182-133-198.ngrok-free.app/redirect";
+                "{{embedded_page}}/not_installed";
               //Timeout only for iOS
               setTimeout(function () {
                 if (window.location !== "/check_ausweisapp") {
                   window.location =
-                    "https://774b-213-182-133-198.ngrok-free.app/redirect"; //Success page
+                    "{{embedded_page}}/success"; //Success page
                 }
               }, 1000);
             }, 25);
