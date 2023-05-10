@@ -24,3 +24,12 @@ def check_bundesident():
 def check_ausweisapp():
     return render_template("check_ausweisapp.html")
 
+
+@app.route("/what_apps_installed/redirect")
+def check_bundesident_redirect():
+    return render_template("check_bundesident_redirect.html")
+
+@app.route("/check_ausweisapp/redirect")
+def check_ausweisapp_redirect():
+    return render_template("check_ausweisapp_redirect.html")
+

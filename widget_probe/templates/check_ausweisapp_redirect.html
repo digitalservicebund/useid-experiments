@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <html>
+      <head>
+        <script type="text/javascript">
+          function load() {
+            var now = new Date();
+            setTimeout(function () {
+              var later = new Date();
+
+              console.log(document.hidden);
+              console.log(document.visibilityState);
+              if (document.hidden || later.valueOf() - now.valueOf() > 1000) {
+                window.location = "https://xkcd.com"; //Success page
+                return;
+              }
+              window.location =
+                "https://774b-213-182-133-198.ngrok-free.app/redirect";
+              //Timeout only for iOS
+              setTimeout(function () {
+                if (window.location !== "/check_ausweisapp/redirect") {
+                  window.location = "https://xkcd.com"; //Success page
+                }
+              }, 1000);
+            }, 25);
+            window.location = "eid://127.0.0.1:24727/eID-Client?tcTokenUrl=123";
+          }
+        </script>
+      </head>
+
+      <body onload="load()">
+        <h1>Teste Ausweisapp</h1>
+      </body>
+    </html>
+  </body>
+</html>
