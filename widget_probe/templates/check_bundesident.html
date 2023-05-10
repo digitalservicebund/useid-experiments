@@ -16,18 +16,27 @@
             var now = new Date();
             setTimeout(function () {
               var later = new Date();
-              console.log(later);
-              if (later.valueOf() - now.valueOf() > 3000) return;
+              console.log(document.hidden);
+              console.log(document.visibilityState);
+              if (document.hidden || later.valueOf() - now.valueOf() > 1000) {
+                window.location = "https://xkcd.com"; //Success page
+                return;
+              }
               window.location = "/check_ausweisapp";
-            }, 25);
-            window.top.location.href =
-              "https://eid.digitalservicebund.de/eID-Client?dummyCom=3";
+              //Timeout only for iOS
+              setTimeout(function () {
+                if (window.location !== "/check_ausweisapp") {
+                  window.location = "https://xkcd.com"; //Success page
+                }
+              }, 1000);
+            }, 500);
+            window.location = "bundesident://testIt";
           }
         </script>
       </head>
 
       <body onload="load()">
-        <h1>Teste Bundesident</h1>
+        <img src="/static/images/loading.gif" width="100%" alt="User Image" />
       </body>
     </html>
   </body>
