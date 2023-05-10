@@ -11,12 +11,19 @@
   <body>
     <html>
       <head> 
+        <script type="text/javascript">
+            function load() {
+              var embeddedUrl = document.referrer
+              console.log(document.getElementById("identlink"))
+              document.getElementById("identlink").href = document.getElementById("identlink").href + `?embeddedUrl=${embeddedUrl}`
+            }
+          </script>
 
       </head>
 
-      <body>
+      <body onload="load()">
         <h1>Welcome</h1>
-        <a href="/what_apps_installed" target="_parent"
+        <a id="identlink" href="/what_apps_installed" target="_parent"
           >Nutze installierte Apps zum Identifzieren</a
         >
       </body>

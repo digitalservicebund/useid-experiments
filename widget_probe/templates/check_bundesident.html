@@ -19,14 +19,14 @@
               console.log(document.hidden);
               console.log(document.visibilityState);
               if (document.hidden || later.valueOf() - now.valueOf() > 1000) {
-                window.location = "{{embedded_page}}/success"; //Success page
+                window.location = `${embeddedPage}/success`; //Success page
                 return;
               }
-              window.location = "/check_ausweisapp";
+              window.location = `/check_ausweisapp?embeddedPage=${embeddedPage}`;
               //Timeout only for iOS
               setTimeout(function () {
                 if (window.location !== "/check_ausweisapp") {
-                  window.location = "{{embedded_page}}/success"; //Success page
+                  window.location = `${embeddedPage}/success`; //Success page
                 }
               }, 25);
             }, 500);
