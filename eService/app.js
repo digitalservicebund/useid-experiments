@@ -1,6 +1,9 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const port = 3000;
+
+const widgetSource = process.env.WIDGET_SOURCE;
 
 app.get("/", (req, res) => {
   res.set("Content-Type", "text/html");
@@ -21,7 +24,7 @@ app.get("/", (req, res) => {
     </head>
     <body>
       <h1>Check out our smart widget!</h1>
-      <iframe src="https://3cdb-213-182-133-198.ngrok-free.app" height="800" width="800" title="iframe Example" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts"></iframe>
+      <iframe src="${widgetSource}" height="800" width="800" title="iframe Example" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts"></iframe>
     </body>
   </html>`);
 });
@@ -44,7 +47,7 @@ app.get("/redirect", (req, res) => {
     <head>
     </head>
     <body>
-      <iframe src="https://3cdb-213-182-133-198.ngrok-free.app/not_installed" height="800" width="400" title="iframe Example" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts"></iframe>
+      <iframe src="${widgetSource}" height="800" width="400" title="iframe Example" sandbox="allow-same-origin allow-top-navigation allow-forms allow-scripts"></iframe>
     </body>
   </html>`);
 });
