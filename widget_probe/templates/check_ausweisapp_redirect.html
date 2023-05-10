@@ -28,7 +28,8 @@
               //Timeout only for iOS
               setTimeout(function () {
                 if (window.location !== "/check_ausweisapp/redirect") {
-                  window.location = "https://xkcd.com"; //Success page
+                  window.location =
+                    "https://774b-213-182-133-198.ngrok-free.app/redirect"; //Success page
                 }
               }, 1000);
             }, 25);
@@ -38,7 +39,7 @@
       </head>
 
       <body onload="load()">
-        <h1>Teste Ausweisapp</h1>
+        <img src="/static/images/loading.gif" width="100%" alt="User Image" />
       </body>
     </html>
   </body>
