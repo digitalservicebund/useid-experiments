@@ -1,7 +1,0 @@
-### MacOS ###
-.DS_Store
-
-*.env
-
-eService/node_modules
-eService/package-lock.json
