@@ -20,7 +20,7 @@ def success():
 def check_bundesident():
     embedded_page = request.args.get("embeddedPage")
     if embedded_page != allowed_page:
-        embedded_page = "djfjdk"
+        embedded_page = ""
 
     return render_template("check_bundesident.html", embedded_page=embedded_page)
 
@@ -28,7 +28,7 @@ def check_bundesident():
 def check_ausweisapp():
     embedded_page = request.args.get("embeddedPage")
     if embedded_page != allowed_page:
-        embedded_page = "jdkfdjkd"
+        embedded_page = ""
 
     return render_template("check_ausweisapp.html", embedded_page=embedded_page)
 
