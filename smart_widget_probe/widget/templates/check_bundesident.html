@@ -12,18 +12,6 @@
     <html>
       <head>
         <script type="text/javascript">
-          function iOS() {
-            return [
-              'iPad Simulator',
-              'iPhone Simulator',
-              'iPod Simulator',
-              'iPad',
-              'iPhone',
-              'iPod'
-            ].includes(navigator.platform)
-            // iPad on iOS 13 detection
-            || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-          }
           function load() {
             var now = new Date();
             setTimeout(function () {
@@ -33,14 +21,6 @@
                 return;
               }
               window.location = `/check_ausweisapp`;
-              //only for iOS
-              if(iOS()){
-                setTimeout(function () {
-                  if (window.location !== "/check_ausweisapp") {
-                    window.location = `{{embedded_page}}/success`;
-                  }
-                }, 25);
-               }
             }, 1000);
             window.location = "bundesident://testIt";
           }

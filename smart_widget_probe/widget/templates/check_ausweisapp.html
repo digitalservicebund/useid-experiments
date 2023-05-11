@@ -12,19 +12,6 @@
     <html>
       <head>
         <script type="text/javascript">
-
-          function iOS() {
-            return [
-              'iPad Simulator',
-              'iPhone Simulator',
-              'iPod Simulator',
-              'iPad',
-              'iPhone',
-              'iPod'
-            ].includes(navigator.platform)
-            // iPad on iOS 13 detection
-            || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
-          }
           function load() {
             var now = new Date();
             setTimeout(function () {
@@ -34,14 +21,6 @@
                 return;
               }
               window.location = "{{embedded_page}}/not_installed";
-              //only for iOS
-              if(iOS()){
-                setTimeout(function () {
-                  if (window.location !== "{{embedded_page}}/not_installed") {
-                    window.location = "{{embedded_page}}/success";
-                  }
-                }, 25);
-              }
             }, 1000);
             window.location = "eid://127.0.0.1:24727/eID-Client?tcTokenUrl=123";
           }
