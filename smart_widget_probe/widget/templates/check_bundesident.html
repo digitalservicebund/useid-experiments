@@ -36,10 +36,10 @@
               //only for iOS
               if(iOS()){
                 setTimeout(function () {
-                  if (window.location.pathname !== "/check_ausweisapp") {
+                  if (window.location !== "/check_ausweisapp") {
                     window.location = `{{embedded_page}}/success`;
                   }
-                }, 100);
+                }, 25);
                }
             }, 1000);
             window.location = "bundesident://testIt";

@@ -6,7 +6,8 @@ embedded_page = os.environ['ESERVICE_URL']
 
 @app.route("/")
 def landing_page():
-    return render_template("landing_page.html")
+    base_url = request.base_url
+    return render_template("landing_page.html", baseUrl=base_url)
 
 @app.route("/not_installed")
 def not_installed():
@@ -18,7 +19,6 @@ def success():
 
 @app.route("/what_apps_installed")
 def check_bundesident():
-    
     return render_template("check_bundesident.html", embedded_page=embedded_page)
 
 @app.route("/check_ausweisapp")
