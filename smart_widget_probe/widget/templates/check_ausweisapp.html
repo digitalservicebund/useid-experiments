@@ -16,20 +16,15 @@
             var now = new Date();
             setTimeout(function () {
               var later = new Date();
-
-              console.log(document.hidden);
-              console.log(document.visibilityState);
               if (document.hidden || later.valueOf() - now.valueOf() > 1000) {
-                window.location = "{{embedded_page}}/success"; //Success page
+                window.location = "{{embedded_page}}/success";
                 return;
               }
-              window.location =
-                "{{embedded_page}}/not_installed";
-              //Timeout only for iOS
+              window.location = "{{embedded_page}}/not_installed";
+              //only for iOS
               setTimeout(function () {
                 if (window.location !== "/check_ausweisapp") {
-                  window.location =
-                    "{{embedded_page}}/success"; //Success page
+                  window.location = "{{embedded_page}}/success";
                 }
               }, 25);
             }, 25);

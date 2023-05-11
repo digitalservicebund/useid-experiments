@@ -16,17 +16,15 @@
             var now = new Date();
             setTimeout(function () {
               var later = new Date();
-              console.log(document.hidden);
-              console.log(document.visibilityState);
               if (document.hidden || later.valueOf() - now.valueOf() > 1000) {
-                window.location = `${embeddedPage}/success`; //Success page
+                window.location = `{{embedded_page}}/success`;
                 return;
               }
-              window.location = `/check_ausweisapp?embeddedPage=${embeddedPage}`;
-              //Timeout only for iOS
+              window.location = `/check_ausweisapp?embeddedPage={{embedded_page}}`;
+              //only for iOS
               setTimeout(function () {
                 if (window.location !== "/check_ausweisapp") {
-                  window.location = `${embeddedPage}/success`; //Success page
+                  window.location = `{{embedded_page}}/success`;
                 }
               }, 25);
             }, 500);
