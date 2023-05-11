@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import os
 
 app = Flask(__name__)
-allowed_page = os.environ['ESERVICE_URL']
+embedded_page = os.environ['ESERVICE_URL']
 
 @app.route("/")
 def landing_page():
@@ -18,17 +18,11 @@ def success():
 
 @app.route("/what_apps_installed")
 def check_bundesident():
-    embedded_page = request.args.get("embeddedPage")
-    if embedded_page != allowed_page:
-        embedded_page = ""
-
+    
     return render_template("check_bundesident.html", embedded_page=embedded_page)
 
 @app.route("/check_ausweisapp")
 def check_ausweisapp():
-    embedded_page = request.args.get("embeddedPage")
-    if embedded_page != allowed_page:
-        embedded_page = ""
 
     return render_template("check_ausweisapp.html", embedded_page=embedded_page)
 
