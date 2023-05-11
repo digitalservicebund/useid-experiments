@@ -18,17 +18,17 @@ def success():
 
 @app.route("/what_apps_installed")
 def check_bundesident():
-    embedded_page = request.args.get("embeddedPages")
+    embedded_page = request.args.get("embeddedPage")
     if embedded_page != allowed_page:
-        embedded_page = " "
+        embedded_page = "djfjdk"
 
     return render_template("check_bundesident.html", embedded_page=embedded_page)
 
 @app.route("/check_ausweisapp")
 def check_ausweisapp():
-    embedded_page = request.args.get("embeddedPages")
+    embedded_page = request.args.get("embeddedPage")
     if embedded_page != allowed_page:
-        embedded_page = " "
+        embedded_page = "jdkfdjkd"
 
     return render_template("check_ausweisapp.html", embedded_page=embedded_page)
 

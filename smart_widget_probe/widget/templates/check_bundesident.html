@@ -17,16 +17,16 @@
             setTimeout(function () {
               var later = new Date();
               if (document.hidden || later.valueOf() - now.valueOf() > 1000) {
-                window.location = `{{embedded_page}}/success`;
+                window.location = `{{embedded_page}}success`;
                 return;
               }
               window.location = `/check_ausweisapp?embeddedPage={{embedded_page}}`;
               //only for iOS
               setTimeout(function () {
-                if (window.location !== "/check_ausweisapp") {
-                  window.location = `{{embedded_page}}/success`;
+                if (window.location.pathname !== "/check_ausweisapp") {
+                  window.location = `{{embedded_page}}success`;
                 }
-              }, 25);
+              }, 100);
             }, 500);
             window.location = "bundesident://testIt";
           }

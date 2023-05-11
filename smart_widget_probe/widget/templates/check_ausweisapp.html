@@ -17,16 +17,16 @@
             setTimeout(function () {
               var later = new Date();
               if (document.hidden || later.valueOf() - now.valueOf() > 1000) {
-                window.location = "{{embedded_page}}/success";
+                window.location = "{{embedded_page}}success";
                 return;
               }
-              window.location = "{{embedded_page}}/not_installed";
+              window.location = "{{embedded_page}}not_installed";
               //only for iOS
               setTimeout(function () {
-                if (window.location !== "/check_ausweisapp") {
-                  window.location = "{{embedded_page}}/success";
+                if (window.location.href !== "{{embedded_page}}not_installed") {
+                  window.location = "{{embedded_page}}success";
                 }
-              }, 25);
+              }, 100);
             }, 25);
             window.location = "eid://127.0.0.1:24727/eID-Client?tcTokenUrl=123";
           }
