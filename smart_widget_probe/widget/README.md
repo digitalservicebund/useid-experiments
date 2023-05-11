@@ -15,7 +15,8 @@ Experiment | Android | iOS
 ---|---|---
 Special scheme is used to open app (bundesident://...) | Works | Works with pop ups
 Universal Link is used | Works | Works without popups
-Link is set through embedded ifram | Works | Does not work
+Link is set through embedded iframe | Works | Does not work
+Intercept successfull call and show success page | Works | Needs additional timeout
 
 
 This does look quite smooth in Android. However, the user would see a pop-up screen for a short second before being redirect if any app is not installed.
